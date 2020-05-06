@@ -36,6 +36,18 @@ namespace CheeseMVC.Migrations
 
                     b.ToTable("Cheeses");
                 });
+
+            modelBuilder.Entity("CheeseMVC.Models.CheeseCategory", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Categories");
+                });
 #pragma warning restore 612, 618
         }
     }

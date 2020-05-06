@@ -12,8 +12,8 @@ using System;
 namespace CheeseMVC.Migrations
 {
     [DbContext(typeof(CheeseDbContext))]
-    [Migration("20200506015526_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20200506200003_AddCategory")]
+    partial class AddCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,18 @@ namespace CheeseMVC.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Cheeses");
+                });
+
+            modelBuilder.Entity("CheeseMVC.Models.CheeseCategory", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Categories");
                 });
 #pragma warning restore 612, 618
         }
